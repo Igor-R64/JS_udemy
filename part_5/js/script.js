@@ -25,7 +25,13 @@ const movieDB = {
 };
 
 const img = document.querySelectorAll('.promo__adv img'),
-genre = document.querySelector('.promo__genre');
+      genre = document.querySelector('.promo__genre'),
+      background = document.querySelector('.promo__bg'),
+      interactive = document.querySelectorAll('.promo__interactive-item'),
+      interactivelist = document.querySelector('.promo__interactive-list'),
+      ol = document.createElement('ol');
+ 
+
 
 
 img.forEach(item => {
@@ -34,3 +40,16 @@ img.forEach(item => {
 
 
 genre.textContent = 'ДРАММА';
+
+background.style.backgroundImage = 'url("img/bg.jpg")';
+
+movieDB.movies.sort();
+
+interactivelist.innerHTML = '';
+
+movieDB.movies.forEach((film, i) => {
+    interactivelist.innerHTML += `
+    <li class="promo__interactive-item">${i + 1} ${film}
+         <div class="delete"></div>
+    </li>`;
+} );
