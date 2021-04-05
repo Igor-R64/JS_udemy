@@ -59,6 +59,13 @@ chek.addEventListener('click', () => {
 
 movieDB.movies.sort();
 
+
+for (let value of movieDB.movies) {
+    if(value.length > 21){
+        value = value.substring(0, 21) + "...";
+    }
+}
+
 // 1) Реализовать функционал, что после заполнения формы и нажатия кнопки "Подтвердить" - 
 // новый фильм добавляется в список. Страница не должна перезагружаться.
 // Новый фильм должен добавляться в movieDB.movies.
